@@ -28,7 +28,6 @@ public class LoginTest extends TestBase {
 
 		driver = initializeDriver();
 		driver.manage().window().maximize();
-		
 
 	}
 
@@ -41,23 +40,21 @@ public class LoginTest extends TestBase {
 		lp.userName().sendKeys(username);
 		lp.password().sendKeys(password);
 		WebElement l = lp.login();
-
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(l));
 		lp.login().click();
-		Thread.sleep(5000);
+		Thread.sleep(9000);
 		String actualUrl = driver.getCurrentUrl();
 		System.out.println(actualUrl);
 		String ExpectedUrl = "http://stage-showpro.herokuapp.com/dashboard";
 		Assert.assertEquals(actualUrl, ExpectedUrl);
-		System.out.println("Login Test Case Pass");
+		System.out.println("Login Test Pass");
 
 	}
 
 	@DataProvider(name = "getData")
-	public  String[][] dp() throws IOException {
+	public String[][] dp() throws IOException {
 		DataDriven ext = new DataDriven();
-		 String[][] dataToRead = ext.excelRead("C:\\Users\\OM\\workspace\\anyonehomeDemo\\src\\main\\java\\TestData\\Controller.xlsx", "Sheet1");
+		String[][] dataToRead = ext
+				.excelRead("C:\\Users\\OM\\workspace\\anyonehomeDemo\\src\\main\\java\\TestData\\file.xlsx", "Sheet1");
 		return dataToRead;
 	}
 

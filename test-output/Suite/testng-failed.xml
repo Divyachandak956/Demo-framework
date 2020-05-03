@@ -8,8 +8,6 @@
     <classes>
       <class name="Tests.LoginTest">
         <methods>
-          <include name="teardown"/>
-          <include name="initialize"/>
           <include name="Login"/>
         </methods>
       </class> <!-- Tests.LoginTest -->
